@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "Timer Interrupt with Button",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 100,
+      "left": -100,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 0,
+      "left": 160,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 30, "left": 160, "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:GND.1", "led1:C", "black", [] ],
+    [ "esp:D4", "r1:1", "blue", [] ],
+    [ "r1:2", "led1:A", "blue", [] ],
+    [ "esp:D35", "btn1:1.r", "green", [] ],
+    [ "esp:GND.2", "btn1:2.r", "black", [] ]
+  ],
+  "dependencies": {}
+}
