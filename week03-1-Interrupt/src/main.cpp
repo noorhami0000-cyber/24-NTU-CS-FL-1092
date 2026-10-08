@@ -2,7 +2,7 @@
 // Interrupt (External -Button)
 // Embedded IoT System Fall-2026
 
-// Name: xyz                  Reg#: 1234
+// Name: Shahnoor Zahid               Reg#: 24-NTU-CS-FL-1092
 
 #include<Arduino.h>
 const int buttonPin = 32;

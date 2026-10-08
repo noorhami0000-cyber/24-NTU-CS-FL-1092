@@ -29,7 +29,7 @@
     [ "esp:GND.1", "led1:C", "black", [] ],
     [ "esp:D4", "r1:1", "blue", [] ],
     [ "r1:2", "led1:A", "blue", [] ],
-    [ "esp:D35", "btn1:1.r", "green", [] ],
+    [ "esp:D23", "btn1:1.r", "green", [] ],
     [ "esp:GND.2", "btn1:2.r", "black", [] ]
   ],
   "dependencies": {}
