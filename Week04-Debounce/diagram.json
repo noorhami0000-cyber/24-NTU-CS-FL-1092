@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Shahnoor Zahid",
+  "editor": "wokwi",
+
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 50,
+      "left": 120,
+      "attrs": {
+        "color": "green"
+      }
+    }
+  ],
+
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:rx", "", [] ],
+    [ "esp:RX0", "$serialMonitor:tx", "", [] ],
+
+    [ "btn1:1.l", "esp:GND.1", "black", [] ],
+    [ "btn1:2.l", "esp:D4", "green", [] ]
+  ],
+
+  "dependencies": {}
+}
