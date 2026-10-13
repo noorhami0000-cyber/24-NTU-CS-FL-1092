@@ -34,5 +34,13 @@ void setup() {
 }
 
 void loop() {
-  // Static screen display ke liye loop khali rakha hai
+  display.clearDisplay();
+  
+  display.setTextSize(2);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(10, 20);
+  display.println(F("Hello IoT!"));
+
+  display.display();
+ 
 }
