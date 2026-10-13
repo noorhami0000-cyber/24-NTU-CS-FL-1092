@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "Shahnoor Zahid",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 100,
+      "left": 150,
+      "attrs": {}
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 50,
+      "left": 420,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 150,
+      "left": -50,
+      "attrs":{} 
+    }
+  ],
+ "connections": [
+  ["esp:TX0", "$serialMonitor:rx", "", []],
+  ["esp:RX0", "$serialMonitor:tx", "", []],
+
+  ["oled1:GND", "esp:GND.1", "black",
+    ["v-70", "h-250"]
+  ],
+  ["oled1:VCC", "esp:3V3", "red",
+    ["v-90", "h-270"]
+  ],
+  ["oled1:SDA", "esp:D21", "green",
+    ["v-110", "h-290"]
+  ],
+  ["oled1:SCL", "esp:D22", "blue",
+    ["v-130", "h-310"]
+  ],
+
+  ["dht1:GND", "esp:GND.2", "black", ["v0"]],
+  ["dht1:VCC", "esp:3V3", "red",
+    ["h0", "v30", "h150"]
+  ],
+  ["dht1:SDA", "esp:D14", "orange", ["v0"]]
+]
+}
