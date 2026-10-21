@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "Shahnoor Zahid",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-v1", "id": "esp", "top": 100, "left": 100, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -50, "left": 230, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led2", "top": -50, "left": 310, "attrs": { "color": "green" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 40, "left": 220, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 40, "left": 300, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:D18", "r1:1", "red", [ "h0" ] ],
+    [ "r1:2", "led1:A", "red", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v10", "h-110" ] ],
+    [ "esp:D19", "r2:1", "green", [ "h0" ] ],
+    [ "r2:2", "led2:A", "green", [ "v0" ] ],
+    [ "led2:C", "esp:GND.1", "black", [ "v20", "h-180" ] ]
+  ]
+}
