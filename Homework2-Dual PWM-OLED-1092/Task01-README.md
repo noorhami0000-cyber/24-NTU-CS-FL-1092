@@ -1,20 +1,23 @@
-# Homework 2: Dual-LED PWM Control (Task 1)
+# Homework 2: Dual-LED PWM Control with OLED Monitoring
 
 ## Overview
-* This project represents Task 1 of Embedded IoT Systems Homework 2.
-* It demonstrates dual independent LED fading on an ESP32 microcontroller using different PWM frequencies for each LED.
+* This project is the final implementation of Embedded IoT Systems Homework 2.
+* It controls two independent LEDs fading at different PWM frequencies (1 kHz and 5 kHz) on an ESP32.
+* Live duty cycle percentages and operating frequencies are continuously displayed on an SSD1306 I2C OLED screen.
 
-## Hardware & Wiring Connections
-* **LED 1 (Red)**: Anode (+) connected to **GPIO 18** via a 220-ohm resistor.
-* **LED 1 (Red)**: Cathode (-) connected to **GND**.
-* **LED 2 (Green)**: Anode (+) connected to **GPIO 19** via a 220-ohm resistor.
-* **LED 2 (Green)**: Cathode (-) connected to **GND**.
+## Hardware & Pin Wiring
+* **LED 1 (Red)**: Connected to **GPIO 18** via 220Ω resistor.
+* **LED 2 (Green)**: Connected to **GPIO 19** via 220Ω resistor.
+* **SSD1306 OLED (I2C)**:
+  * SDA -> **GPIO 21**
+  * SCL -> **GPIO 22**
+  * VCC -> **3.3V**
+  * GND -> **GND**
 
-## PWM Configurations & Frequencies
-* **LED 1 Frequency**: Configured at 1000 Hz (1 kHz) with 8-bit resolution.
-* **LED 2 Frequency**: Configured at 5000 Hz (5 kHz) with 8-bit resolution.
-* Both LEDs smoothly fade between minimum and maximum brightness independently.
+## PWM Configurations
+* **LED 1**: Frequency = 1000 Hz (1 kHz), Resolution = 8-bit.
+* **LED 2**: Frequency = 5000 Hz (5 kHz), Resolution = 8-bit.
 
-## Testing & Verification
-* **Wokwi Simulation**: Successfully tested and verified independent LED fading behavior on the virtual setup.
-* **Physical Hardware**: Verified on the physical ESP32 kit and breadboard with exact visual performance matching the simulation.
+## Testing & Results
+* **Wokwi Simulation**: Verified smooth LED fading with real-time duty cycle updates on the virtual OLED screen.
+* **Physical Hardware**: Tested on physical ESP32 DevKit V1 with exact hardware response matching simulation.
