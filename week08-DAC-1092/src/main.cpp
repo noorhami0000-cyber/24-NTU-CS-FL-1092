@@ -1,26 +1,26 @@
 // Name: Shahnoor Zahid
-// Task 25: DAC2 on GPIO26
+// Task 26: DAC and PWM simultaneously
 #include <Arduino.h>
 
-#define DAC_PIN 26  // Yahan GPIO26 kar diya hai
+#define DAC_PIN 25
+#define PWM_PIN 16
 
 void setup()
 {
     Serial.begin(115200);
-    Serial.println("Task 25: DAC2 GPIO26 Test");
+    
+    // PWM configure karna (5 kHz frequency, 8-bit resolution)
+    ledcAttach(PWM_PIN, 5000, 8);
 }
 
 void loop()
 {
-    for (int value = 0; value <= 255; value++)
-    {
-        dacWrite(DAC_PIN, value);
-        delay(20);
-    }
+    // DAC output code 128
+    dacWrite(DAC_PIN, 128);
     
-    for (int value = 255; value >= 0; value--)
-    {
-        dacWrite(DAC_PIN, value);
-        delay(20);
-    }
+    // PWM duty value 128 (approx 50%)
+    ledcWrite(PWM_PIN, 128);
+    
+    Serial.println("DAC=128 | PWM duty=128");
+    delay(1000);
 }
